@@ -24,25 +24,26 @@ function TabPanel(props) {
 export default function ChaoTang() {
     const departments = ['户部','工部','兵部'];
 
-    const [selected, setSelected] = useState('户部');
+    const [liuBu, setLiuBu] = useState('户部');
 
     function handleLiuBu(event, value) {
-        setSelected(value);
-    }
-
-    function handleListItemClick(event, value) {
-        setSelected(value);
+      setLiuBu(value);
     }
 
     return <>
+      <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
         <Box sx={{ width: '20%', textAlign: 'center' }}>
             <List component="nav" aria-label="secondary mailbox folder">
                 {departments.map(d => (
-                    <ListItemButton selected={selected === d} 
-                        onClick={(event) => handleListItemClick(event,{d})}>
+                    <ListItemButton selected={liuBu === d} key={d} onClick={e => handleLiuBu(e, d)}>
                         <ListItemText primary={d} sx={{ textAlign: 'center' }}/>
                     </ListItemButton>))}
             </List>
         </Box>
+        <Box sx={{ width: '100%', padding: '8px' }}>
+          <Typography component='span'>this is a {liuBu}</Typography>
+        </Box>
+      </div>
+        
     </>
 }

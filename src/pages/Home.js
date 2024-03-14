@@ -1,7 +1,8 @@
-import { Container, Grid } from "@mui/material";
-import { Profile } from "../components/index";
-import Header from "./Header";
-import Biz from "./Biz";
+import { useState } from "react";
+import { Container } from "@mui/material";
+import HeaderBar from "./HeaderBar";
+import Era from "./Era";
+import NewEra from "./NewEra";
 import './default.css';
 
 const user = {
@@ -15,18 +16,20 @@ const user = {
     golden: 5000
 }
 
+const menuFunc = ['New','MyEra'];
+
 export default function Home() {
+    const [func, setFunc] = useState('New');
+
+    function handleFunc(e, v) {
+        setFunc(v); console.log(v)
+    }
+
     return <>
-        <Header></Header>
+        <HeaderBar menus={menuFunc} onChangeMenu={handleFunc}></HeaderBar>
         <Container className="container">
-            <Grid container spacing={2}>
-                <Grid item xs={3}>
-                    <Profile></Profile>
-                </Grid>
-                <Grid item xs={9}>
-                    <Biz era={user.era}></Biz>
-                </Grid>
-            </Grid>
+            {func === 'New' && <NewEra></NewEra>}
+            {func === 'MyEra' && <Era user={user}></Era>}
         </Container>
     </>
 }
