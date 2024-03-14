@@ -1,0 +1,40 @@
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    width: 100%;
+    height: 46px;
+
+    background-color: #1d1d1d;
+}
+
+.header-flow {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.header .title {
+    color: #d8d8d8;
+    font-size: 26px;
+    padding: 6px 12px;
+    border-right: #3f3f3f 1px solid;
+}
+
+.func-list {
+    list-style: none;
+    color: #d8d8d8;
+}
+
+.func-list li {
+    font-size: 18px;
+    padding: 12px 0;
+    margin: 0 12px;
+}
+
+
+.container {
+    /* background-color: antiquewhite; */
+    margin-top: 18px;
+}
