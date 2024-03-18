@@ -6,8 +6,6 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 
-const pages = ['new'];
-
 export default function HeaderBar({ menus, onChangeMenu }) {
 
   return (

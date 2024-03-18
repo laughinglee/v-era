@@ -11,7 +11,7 @@ export default function Biz({ era }) {
     }
 
     return <>
-        <StatusBar {...era}></StatusBar>
+        {/* <StatusBar {...era}></StatusBar> */}
         <Doors></Doors>
     </>
 }

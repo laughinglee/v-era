@@ -6,7 +6,7 @@ export default function Era({ user }) {
     return (
         <Grid container spacing={2}>
             <Grid item xs={3}>
-                <Profile></Profile>
+                <Profile user={user}></Profile>
             </Grid>
             <Grid item xs={9}>
                 <Biz era={user.era}></Biz>
